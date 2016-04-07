@@ -17,6 +17,7 @@ it 'succeeded' do
 	@driver.find_element(id: 'username').send_keys('tomsmith')
 	@driver.find_element(id: 'password').send_keys('SuperSecretPassword!')
 	@driver.find_element(css: 'button').submit
+	expect(@driver.find_element(css: '.flash.success').displayed?).to eql true
 end
 
 end
