@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
 
 gem 'rspec', '~> 3.4.0'
-gem 'selenium-webdriver', '2.48.1'
+gem 'selenium-webdriver', '2.53.0'
+gem 'chromedriver-helper', '1.0.0'
