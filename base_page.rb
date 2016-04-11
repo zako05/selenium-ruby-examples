@@ -24,7 +24,11 @@ class BasePage
 	end
 
 	def is_displayed?(locator)
-		find(locator).displayed?
+		begin
+			find(locator).displayed?
+		rescue Selenium::WebDriver::Error::NoSuchElementError
+			false
+		end
 	end
 
 end

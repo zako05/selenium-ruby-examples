@@ -22,6 +22,7 @@ end
 it 'failed' do
 	@login.with('asdf','asdf')
 	expect(@login.failure_message_present?).to eql true
+	# expect(@login.success_message_present?).to eql false
 end
 
 end
