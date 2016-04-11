@@ -1,11 +1,13 @@
 # filename: login_spec.rb
 
 require 'selenium-webdriver'
+require_relative 'login'
 
 describe 'Login' do
 
 before(:each) do
 	@driver = Selenium::WebDriver.for :chrome
+	@login = Login.new(@driver)
 end
 
 after(:each) do
@@ -13,11 +15,13 @@ after(:each) do
 end
 
 it 'succeeded' do
-	@driver.get 'http://the-internet.herokuapp.com/login'
-	@driver.find_element(id: 'username').send_keys('tomsmith')
-	@driver.find_element(id: 'password').send_keys('SuperSecretPassword!')
-	@driver.find_element(css: 'button').submit
-	expect(@driver.find_element(css: '.flash.success').displayed?).to eql true
+	@login.with('tomsmith', 'SuperSecretPassword!')
+	expect(@login.success_message_present?).to eql true
+end
+
+it 'failed' do
+	@login.with('asdf','asdf')
+	expect(@login.failure_message_present?).to eql true
 end
 
 end
