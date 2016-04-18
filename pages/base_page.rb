@@ -1,4 +1,5 @@
-# filename: base_page.rb
+# filename: pages/base_page.rb
+
 require 'selenium-webdriver'
 
 class BasePage
@@ -7,8 +8,8 @@ class BasePage
 		@driver = driver
 	end
 
-	def visit(url)
-		@driver.get url
+	def visit(url_path)
+		@driver.get ENV['base_url'] + url_path
 	end
 
 	def find(locator)

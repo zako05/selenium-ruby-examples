@@ -1,18 +1,18 @@
-# filename: login_spec.rb
+# filename: spec/login_spec.rb
 
-require 'selenium-webdriver'
-require_relative 'login'
+require_relative 'spec_helper'
+require_relative '../pages/login'
 
 describe 'Login' do
 
 before(:each) do
-	@driver = Selenium::WebDriver.for :chrome
+	# @driver = Selenium::WebDriver.for :chrome
 	@login = Login.new(@driver)
 end
 
-after(:each) do
-	@driver.quit
-end
+# after(:each) do
+# 	@driver.quit
+# end
 
 it 'succeeded' do
 	@login.with('tomsmith', 'SuperSecretPassword!')
