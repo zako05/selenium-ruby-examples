@@ -5,7 +5,12 @@ require 'selenium-webdriver'
 RSpec.configure do |config|
 
 	config.before(:each) do
-		@driver = Selenium::WebDriver.for :chrome
+		case ENV['browser']
+		when 'chrome'
+			@driver = Selenium::WebDriver.for :chrome
+		when 'firefox'
+			@driver = Selenium::WebDriver.for :firefox
+		end
 	end
 
 	config.after(:each) do
