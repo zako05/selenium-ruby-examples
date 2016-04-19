@@ -1,5 +1,7 @@
 # filename: config_cloud.rb
 
+require 'sauce_whisky'
+
 ENV['base_url']			||= 'http://the-internet.herokuapp.com'
 ENV['host']			||= 'saucelabs'
 # ENV['SAUCE_USERNAME']		||= 'your-sauce-username'
