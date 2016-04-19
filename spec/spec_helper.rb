@@ -32,6 +32,7 @@ RSpec.configure do |config|
 	# 			SauceWhisky::Jobs.pass_job @driver.session_id
 	# 		else
 	# 			SauceWhisky::Jobs.fail_job @driver.session_id
+	# 			raise "Watch a video of the test at https://saucelabs.com/tests/#{@driver.session_id}"
 	# 		end
 	# 	end
         #
