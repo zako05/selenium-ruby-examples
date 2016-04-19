@@ -1,4 +1,4 @@
-# filename: config_cloud.rb
+# filename: config/cloud.rb
 
 require 'sauce_whisky'
 
