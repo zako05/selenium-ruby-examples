@@ -22,7 +22,7 @@ end
 # end
 
 namespace :cloud do
-	BROWSER_CLOUD = ['firefox', 'chrome', 'interner-explorer']
+	BROWSER_CLOUD = ['firefox', 'chrome', 'internet-explorer']
 	BROWSER_CLOUD.each do |browser|
 		desc "Run tests in Sauce Labs on #{browser.capitalize}"
 		task browser.to_sym, :version, :os do |t, args|
